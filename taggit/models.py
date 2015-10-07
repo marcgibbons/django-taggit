@@ -156,7 +156,8 @@ class GenericTaggedItemBase(ItemBase):
     content_type = models.ForeignKey(
         ContentType,
         verbose_name=_('Content type'),
-        related_name="%(app_label)s_%(class)s_tagged_items"
+        related_name="%(app_label)s_%(class)s_tagged_items",
+        db_constraint=False,
     )
     content_object = GenericForeignKey()
 
